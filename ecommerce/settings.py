@@ -127,6 +127,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = ["static/"]
+STATICFILES_STORAGE='whitenoise.storage.compressedStaticFilesStorage'
 
 
 MEDIA_URL = '/media/'
