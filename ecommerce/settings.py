@@ -129,6 +129,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = ["static/"]
 STATICFILES_STORAGE='whitenoise.storage.compressedStaticFilesStorage'
 DISABLE_COLLECTSTATIC=1
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 MEDIA_URL = '/media/'
