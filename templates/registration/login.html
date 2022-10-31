@@ -8,16 +8,16 @@
         <h1>Connexion</h1>
         {% if form.errors %}
         <p>
-            Votre nom d'utilisateur et votre mot de passe ne correspondent pas.Veuillez
+            Votre nom d'utilisateur ou votre mot de pass est incorrect.Veuillez
             Veuillez réessayer.
         </p>
         {% else %}
-        <p>Veuillez utiliser le formulaire suivant pour vous connecter</p>
+        <p>Veuillez renseigner le formulaire ci-dessus pour vous connecter</p>
         {% endif %}
     </div>
 
     <form action="" method="post" class="form ">
-        <p><a href="{% url 'authapp:password_reset' %}">Mot de passe oublié?</a></p>
+        <p><a href="{% url 'authapp:password_reset' %}">Mot de pass oublié?</a></p>
         {% csrf_token %}
         {% bootstrap_form form %}
         {% buttons %}

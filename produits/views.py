@@ -16,7 +16,7 @@ from django.utils import timezone
 
 
 # Create your views here.
-#home
+#LES VIEWS SUR HOME
 def index(request):
     product_object = Produit.objects.all()
     categories = Categorie.objects.all()
@@ -28,7 +28,7 @@ def index(request):
     product_object = paginator.get_page(page)
     return render(request, 'produits/index.html', {'produits': product_object, 'categories':categories})
 
-#detail
+# les views sur detail
 def detail(request, myid):
     product_object = Produit.objects.get(id=myid)
     return render(request, 'produits/detail.html', {'product': product_object})    
@@ -48,7 +48,7 @@ def confimation(request):
 
     return render(request, 'produits/confirmation.html', {'has_order': has_order})            
 
-#statistique des achats
+# views sur les statistique des achats
 @staff_member_required
 def statistique(request):
     commande = Order.objects.all().order_by('-ordered_date')
@@ -76,7 +76,7 @@ class UserEditView(LoginRequiredMixin,UpdateView):
 	success_url = reverse_lazy('produits:profile')
 
 
-# seller
+# views sur les commandes
 @login_required 
 def product_seller_list(request):
     userproduit = Produit.objects.filter(user=request.user)

@@ -7,9 +7,9 @@ from django.contrib.auth.forms import PasswordResetForm
  
 class UserRegistration(forms.ModelForm):
     password1 = forms.CharField(label='Mot de passe', widget=forms.PasswordInput)
-    password2 = forms.CharField(
-        label='Repeter le Mot de password', widget=forms.PasswordInput)
+    password2 = forms.CharField(label='Repeter le Mot de password', widget=forms.PasswordInput)
     ne_peut_vendre = forms.BooleanField(label='JE VEUX VENDRE' ,required=True)
+
     class Meta:
         model = UserRegistrationModel
         fields = ('username', 'first_name', 'last_name', 'email', 'region', 'ville', 'numero_telephone', 'ne_peut_vendre', 'biographie')
@@ -21,6 +21,7 @@ class UserRegistration(forms.ModelForm):
             if password1 and password2 and password1 != password2:
                 raise forms.ValidationError('Les mots mots de passes sont different!!')
             return password2
+            
         def clean_ne_peut_vendre(self):
             ne_peut_vendre = self.clean_data.get('ne_peux_vendre')
             if ne_peut_vendre:

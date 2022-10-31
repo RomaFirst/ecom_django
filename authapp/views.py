@@ -37,7 +37,7 @@ def register(request):
         form = UserRegistration(request.POST or None)
         if form.is_valid():
             form.save()
-            messages.success(request, "Votre compte a été créé avec succès.")
+            messages.success(request, "BRAVO! Votre compte a été créé avec succès.")
             return render(request, 'authapp/register_done.html')
     else:
         form = UserRegistration()

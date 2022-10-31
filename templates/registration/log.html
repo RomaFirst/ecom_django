@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title> Ecommerce Login</title>
+    <title>Login</title>
     <link rel="stylesheet" href="{% static 'seller/css/sb-admin-2.css' %}">
     <link rel="stylesheet" href="{% static 'seller/css/sb-admin-2.min.css' %}">
 
@@ -56,19 +56,20 @@
                             <div class="col-lg-12">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Content de te revoir!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">
+                                            Happy to see you again!</h1>
                                     </div>
                                     <div style="text-align: center;">
                                         <h1>Connexion</h1>
                                         {% if error %}
                                         <p style="color: rgb(242, 20, 20);">
 
-                                           Ouff!! Votre nom d'utilisateur et votre mot de passe ne correspondent pas.
+                                           Désoler!! Votre nom d'utilisateur ou votre mot de pass n´est pas correct.
                                             Veuillez réessayer.
                                         </p>
                                         {% else %}
                                         
-                                        <p>Veuillez utiliser le formulaire suivant pour vous connecter</p>
+                                        <p>Veuillez renseigner  le formulaire ci-dessous pour vous connecter</p>
                                         {% endif %}
                                     </div>
                                     <form  action="" method="post" class="form user ">
@@ -104,7 +105,7 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="{% url 'authapp:password_reset' %}">Mot de passe oublié?</a>
+                                        <a class="small" href="{% url 'authapp:password_reset' %}">Mot de pass oublié?</a>
                                     </div>
                                     <div class="text-center">
                                         <a class="small" href="{% url 'authapp:register' %}">Créer un compte!</a>

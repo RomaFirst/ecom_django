@@ -29,7 +29,7 @@
       <div class="container">
          <div class="row">
             <div class="col-sm-12">
-               <div class="logo"><a href="/"><img src="{% static 'ecom/images/...' %}" alt="Faso-Yaare"></a></div>
+               <div class="logo"><a href="/"><img style="height: 140px;" src="{% static 'ecom/images/.....' %}" alt="Faso-Yaare"></a></div>
             </div>
          </div>
       </div>
@@ -42,13 +42,13 @@
             <div id="mySidenav" class="sidenav">
                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                <a href="">Accueil</a>
-               <a href="">Fashion</a>
+         
 
 
                {% if user.is_authenticated and user.peut_vendre %}
                <a href="{% url 'authapp:dashboard' %}"> Votre Pannel<a />
                   {% else %}
-                  <a href="{% url 'authapp:register' %}">Devenez un vendeur</a>
+                  <a href="{% url 'authapp:register' %}">Deviens vendeur</a>
                   <a href="{% url 'authapp:login' %}">Se connecter</a>
                   {% endif %}
 
@@ -69,7 +69,7 @@
                <!-- Another variation with a button -->
                <form action="">
                <div class="input-group">
-                 <input type="text" name="item" class="form-control" placeholder="Entrez le nom ...">
+                 <input type="text" name="item" class="form-control" placeholder="Entrez le nom du produit...">
                   <div class="input-group-append">
                      <button class="btn btn-secondary" type="submit"
                         style="background-color: #f26522; border-color:#f26522 ">
@@ -103,7 +103,7 @@
                            <div class="dropdown-menu login_menu_compte" aria-labelledby="dropdownMenuButton">
 
                               {% if user.is_authenticated and user.peut_vendre %}
-                              <a class="dropdown-item" href="/authdashboard/"> Votre Pannel<a />
+                              <a class="dropdown-item" href="/authdashboard/"> Votre Pannel</a>
                                  {% else %}
                                  <a class="dropdown-item" href="{% url 'authapp:register' %}">Creer un compte</a>
                                  <a class="dropdown-item" href="{% url 'authapp:login' %}">Se connecter </a>
@@ -111,10 +111,7 @@
                            </div>
                         </div>
                      </li>
-                     <li><a href="#">
-                           <i class="fa fa-user" aria-hidden="true"></i>
-                           <span class="padding_10">Panier</span></a>
-                     </li>
+                     
                   </ul>
                </div>
             </div>
@@ -130,7 +127,7 @@
                <div class="carousel-item active">
                   <div class="row">
                      <div class="col-sm-12">
-                        <h1 class="banner_taital">IMPOSEZ VOTRE STYLE</h1>
+                        <h1 class="banner_taital">IMPOSEZ VOTRE MARQUE</h1>
                         <div class="buynow_bt"><a href="/authregister/">Devenez vendeur</a></div>
                      </div>
                   </div>
@@ -138,7 +135,7 @@
                <div class="carousel-item">
                   <div class="row">
                      <div class="col-sm-12">
-                        <h1 class="banner_taital">IMPOSEZ VOTRE STYLE</h1>
+                        <h1 class="banner_taital">IMPOSEZ VOTRE MARQUE</h1>
                         <div class="buynow_bt"><a href="#">Devenez vendeur</a></div>
                      </div>
                   </div>
@@ -182,15 +179,15 @@
                            <div class="btn_main">
                               <div class="buy_bt">
                                  {% if user.is_authenticated  %}
-                                 <a class="btn" style="color: #2A35BC;" href="detail/{{ produit.id }}">Acheter</a>
+                                 <a class="btn" style="color: #2A35BC;" href="detail/{{ produit.id }}">Achéter</a>
                                 {% else %}
                                 <button type="button" class="btn" style="color: #2A35BC;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                Acheter
+                                Achéter
                                </button>
                                 {% endif %}
                                 
                               </div>
-                              <div class="seemore_bt"><a href="detail/{{ produit.id }}">Detail</a></div>
+                              <div class="seemore_bt"><a href="detail/{{ produit.id }}">Détail</a></div>
                            </div>
                         </div>
                      </div>
@@ -227,7 +224,7 @@
             <ul class="pagination">
                {% if produits.has_previous %}
                <li class="page-item">
-                  <a class="page-link" href="?page={{ produits.previous_page_number }}">Precedent</a>
+                  <a class="page-link" href="?page={{ produits.previous_page_number }}">Précedent</a>
                </li>
                {% endif %}
 
@@ -256,11 +253,11 @@
    <div class="modal-dialog">
      <div class="modal-content">
        <div class="modal-header">
-         <h5 class="modal-title" id="staticBackdropLabel"> Connecter vous ou creer un compte </h5>
+         <h5 class="modal-title" id="staticBackdropLabel"> Connecter vous ou créer un compte </h5>
          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
        </div>
        <div class="modal-body">
-         <p class="lead text-xs-center">Il ne faut que quelques secondes pour le faire</p>
+         <p class="lead text-xs-center">juste quelques secondes pour le faire</p>
          <div class="lead text-xs-center"><a class="btn btn-info" href="{% url 'authapp:registeruser' %}">Créer un compte</a> ou
              <a class="btn btn-success" href="{% url 'authapp:login' %}">Connexion</a></div>
        </div>
