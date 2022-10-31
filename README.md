@@ -6,7 +6,6 @@ site de ecommerce avec django
 ![alt text](https://donaldprogrammeur.com/wp-content/uploads/2022/04/ecom2.png)
 ![alt text](https://donaldprogrammeur.com/wp-content/uploads/2022/04/ecom.png)
 
-
 # Requirements 
 
 asgiref==3.5.0 <br>
