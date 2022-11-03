@@ -10,8 +10,11 @@ from django.contrib.admin.views.decorators import staff_member_required
 
 
 # Create your views here.
+
 #dashbord du vendeur
+
 @login_required(login_url='/login')
+
 def dashboard(request):
     order_list = []
     order = Order.objects.all()
