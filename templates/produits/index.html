@@ -29,7 +29,15 @@
       <div class="container">
          <div class="row">
             <div class="col-sm-12">
-               <div class="logo"><a href="/"><img style="height: 140px;" src="{% static 'ecom/images/.....' %}" alt="Faso-Yaare"></a></div>
+               <div class="logo"><a href="/"><img style=" color:#ffffff;
+                  width : 150px;
+                  height : 100px;
+                  background : green;
+                  -moz-border-radius : 200px;
+                  -webkit-border-radius : 200px;
+                  border-radius : 200px;  /* ou 50% */
+                  background-image:url(image.jpeg);
+                  background-size: cover;" src="{% static 'ecom/images/logo/LOGOSITE.png' %}" alt="Faso-Yaare Auto"></a></div>
             </div>
          </div>
       </div>
@@ -53,23 +61,25 @@
                   {% endif %}
 
             </div>
+
             <span class="toggle_icon" onclick="openNav()"><img src="{% static 'ecom/images/toggle-icon.png' %}"></span>
             <div class="dropdown">
                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories
+                  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories
                </button>
-               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  {% for cat in categories  %}
-                  <a class="dropdown-item" href="categories/{{cat.id}}/">{{ cat.name }}</a>
-                  {% endfor %}
-
-               </div>
+                  <div class="dropdown-menu  hover" aria-labelledby="dropdownMenuButton">
+                     {% for cat in categories  %}
+                     <a  class="dropdown-item" href="categories/{{cat.id}}/">{{ cat.name }}</a>
+                     {% endfor %}
+                  </div>
             </div>
+
+
             <div class="main">
                <!-- Another variation with a button -->
                <form action="">
                <div class="input-group">
-                 <input type="text" name="item" class="form-control" placeholder="Entrez le nom du produit...">
+                 <input type="text" name="item" class="form-control" placeholder="Entrez le nomde du vehicule...">
                   <div class="input-group-append">
                      <button class="btn btn-secondary" type="submit"
                         style="background-color: #f26522; border-color:#f26522 ">
@@ -102,7 +112,7 @@
                            </button>
                            <div class="dropdown-menu login_menu_compte" aria-labelledby="dropdownMenuButton">
 
-                              {% if user.is_authenticated and user.peut_vendre %}
+                              {%if user.is_authenticated and user.peut_vendre%}
                               <a class="dropdown-item" href="/authdashboard/"> Votre Pannel</a>
                                  {% else %}
                                  <a class="dropdown-item" href="{% url 'authapp:register' %}">Creer un compte</a>
@@ -174,7 +184,7 @@
                      <div class="col-lg-4 col-sm-4">
                         <div class="box_main">
                            <h4 class="shirt_text">{{produit.name}}</h4>
-                           <p class="price_text">FCFA <span style="color: #262626;"> {{ produit.prix }}</span></p>
+                           <p class="price_text"><span style="color: #262626;"> {{ produit.prix }}</span>FCFA </p>
                            <div class="tshirt_img"><img src="{{ produit.image.url }}"></div>
                            <div class="btn_main">
                               <div class="buy_bt">
