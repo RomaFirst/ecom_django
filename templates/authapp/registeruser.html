@@ -1,8 +1,7 @@
-{% extends "base.html" %} {% load bootstrap4 %} {% block title %}Registration {%endblock title %}
- {% block content %} 
+
  {% if form.errors %} 
  {% endif %}
-<body class="bg-gradient-warning">
+<body class="bg-gradient">
   <div class="container">
     <div class="card o-hidden border-0 shadow-lg my-5">
       <div class="card-body p-0">
@@ -14,8 +13,7 @@
               <div style="text-align: center">
                 <h1>Creation de Compte</h1>
                 <p>
-                  Veuillez utiliser le formulaire suivant pour vous creer un
-                  Compte
+                  Veuillez renseigner le formulaire ci-dessous pour vous créer un Compte 
                 </p>
               </div>
 
@@ -29,6 +27,7 @@
                   Créer un compte
                 </button>
                 <hr />
+                <!--
                 <a href="#" class="btn btn-google btn-user btn-block">
                   <i class="fab fa-google fa-fw"></i> Inscrivez-vous avec Google
                 </a>
@@ -39,6 +38,7 @@
                   <i class="fab fa-facebook-f fa-fw"></i> Inscrivez-vous avec
                   Facebook
                 </a>
+                -->
               </form>
               <hr />
               <div class="text-center">

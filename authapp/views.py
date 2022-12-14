@@ -99,8 +99,9 @@ def edit(request):
         if user_form.is_valid():
             user_form.save()
     else:
-        user_form = UserEditForm(instance=request.user)
+         user_form = UserEditForm(instance=request.user)
     context = {
-        'form': user_form,
-    }
+                 'form': user_form,
+                }
+        
     return render(request, 'authapp/edit.html', context=context)
