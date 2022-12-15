@@ -45,8 +45,7 @@ class UserEditForm(forms.ModelForm):
 
 class UserCustomerForm(forms.ModelForm):
     password1 = forms.CharField(label='Mot de passe', widget=forms.PasswordInput)
-    password2 = forms.CharField(
-        label='Repeter le Mot de password', widget=forms.PasswordInput)
+    password2 = forms.CharField(label='Repeter le Mot de password', widget=forms.PasswordInput)
 
     class Meta:
         model = UserRegistrationModel

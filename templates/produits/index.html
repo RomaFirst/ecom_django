@@ -11,11 +11,11 @@
             <div class="col-sm-12">
                <div class="custom_menu">
                   <ul>
-                     <li><a href="#">Meilleures ventes</a></li>
+                     <li><a id="mel" href="{% url 'authapp:dashboard' %}">Meilleures ventes</a></li>
                      
                   
-                     <li><a href="#">Vendeurs</a></li>
-                     <li><a href="#">Service Clients</a></li>
+                     <li><a id="vend" href="/profile">Vendeurs</a></li>
+                     <li><a id="ser" href="/list">Commandes Clients</a></li>
 
                   </ul>
                </div>
@@ -54,7 +54,7 @@
 
 
                {% if user.is_authenticated and user.peut_vendre %}
-               <a href="{% url 'authapp:dashboard' %}"> Votre Pannel<a />
+               <a href="{% url 'authapp:dashboard' %}"> Votre Pannel</a>
                   {% else %}
                   <a href="{% url 'authapp:register' %}">Deviens vendeur</a>
                   <a href="{% url 'authapp:login' %}">Se connecter</a>
@@ -79,7 +79,7 @@
                <!-- Another variation with a button -->
                <form action="">
                <div class="input-group">
-                 <input type="text" name="item" class="form-control" placeholder="Entrez le nomde du vehicule...">
+                 <input type="text" name="item" class="form-control" placeholder="Entrez le nomde du vehicule">
                   <div class="input-group-append">
                      <button class="btn btn-secondary" type="submit"
                         style="background-color: #f26522; border-color:#f26522 ">

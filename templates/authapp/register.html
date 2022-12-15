@@ -2,39 +2,33 @@
  {% block content %} 
  {% if form.errors %} 
  {% endif %}
-
 <body class="bg-gradient-warning">
   <div class="container">
-    <div class="card o-hidden border-0 shadow-lg my-5" >
+    <div class="card o-hidden border-0 shadow-lg my-5">
       <div class="card-body p-0">
         <!-- Nested Row within Card Body -->
         <div class="row">
           <div class="col-lg-12">
             <div class="p-5">
-              
-              <div style="text-align: center;" >
+              <div style="text-align: center;">
                 <h1 >Creation de Compte</h1>
-                <p style="color:rgb(255, 145, 145); " >
+                <p style="color:rgb(255, 145, 145);">
                   Veuillez renseigner le formulaire ci-dessous pour vous créer un
                   Compte
                 </p>
               </div>
-
               <form action="" method="post" class="form containe user">
 
                 {% csrf_token %}
                  {% bootstrap_form form %} 
                  
-                <button
-                  type="submit"
-                  class="btn btn-primary btn-user btn-block" >
-               
+                <button type="submit" class="btn btn-primary btn-user btn-block" >
                
                   Créer un compte
                 </button>
-                <hr />
-                <!--
-                <a href="#" class="btn btn-google btn-user btn-block">
+                <hr/>
+              
+                <!-- <a href="#" class="btn btn-google btn-user btn-block">
                   <i class="fab fa-google fa-fw"></i> Inscrivez-vous avec Google
                 </a>
                 <a
@@ -43,18 +37,15 @@
                 >
                   <i class="fab fa-facebook-f fa-fw"></i> Inscrivez-vous avec
                   Facebook
-                </a>
-                -->
+                </a> -->
+               
               </form>
-              <hr />
+              <hr/>
               <div class="text-center">
-                <a class="small" href="{% url 'authapp:password_reset' %}"
-                  >Mot de passe oublié?</a
-                >
+                <a class="small" href="{% url 'authapp:password_reset' %}">Mot de passe oublié?</a>
               </div>
               <div class="text-center">
-                <a class="small" href="{% url 'authapp:login' %}"
-                  >Vous avez déjà un compte? Connexion!</a>
+                <a class="small" href="{% url 'authapp:login' %}">Vous avez déjà un compte? Connexion!</a>
               </div>
 
             </div>
